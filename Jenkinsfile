@@ -38,9 +38,9 @@ pipeline {
 //                    withCredentials([string(credentialsId: 'neelkakadia', variable: 'dockerhubpwd')]) {
     // some block   
 //                    sh 'docker login -u neelkakadia -p $(dockerhubpwd)'
-}
+
   //                  sh 'docker push neelkakadia/neelkakadia_my_app_1.0'
 //                }
   //          }
      //   } 
-    }
+    
