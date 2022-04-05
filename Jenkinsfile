@@ -22,6 +22,23 @@ pipeline {
                 }
             }
         }
+        stage('Docker Login') {
+            steps {
+                script {
+                    withCredentials([string(credentialsId: 'neelkakadia', variable: 'dockerhubpwd')]) {
+    // some block   
+                        sh 'docker login -u neelkakadia -p $(dockerhubpwd)
+                    }
+                }
+            }
+        }
+        stage('Push Image'){
+            steps {
+                script {
+                    sh 'docker push neelkakadia/neelkakadia_image'
+                }
+            }
+        }
     }
 }      
    /*     stage('Build Docker Image') {
