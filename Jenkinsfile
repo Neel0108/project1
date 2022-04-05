@@ -36,7 +36,7 @@ pipeline {
         stage('Push Image'){
             steps {
                 script {
-                    sh 'docker push neelkakadia/neelkakadia_image'
+                    sh 'docker push neelkakadia_image'
                 }
             }
         }
