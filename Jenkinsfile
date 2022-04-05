@@ -15,7 +15,15 @@ pipeline {
                 }
             }
         }
-      
+        stage('Build Image') {
+            steps {
+                script {
+                    sh 'docker build -t neelkakadia_image'
+                }
+            }
+        }
+    }
+}      
    /*     stage('Build Docker Image') {
             steps {
                 script {
@@ -39,8 +47,6 @@ pipeline {
               }
             }
         } */
-    }   
-}
 
 //       stage('Push Docker Image') {
 //            steps {
