@@ -10,7 +10,8 @@ pipeline {
         }
         stage('Clone repository') {
             steps {
-                checkout scm
+                script {
+                    sh 'git clone https://github.com/Neel0108/project1.git'
             }
         }
       
@@ -20,7 +21,7 @@ pipeline {
                   sh 'docker build -t neelkakadia/neelkakadia_my_app_1.0 .'
                 }
             }
-        }       */
+        }       
       
         stage('Build image') {
             steps {
@@ -36,7 +37,7 @@ pipeline {
                   }
               }
             }
-        }
+        } */
     }   
 }
 
