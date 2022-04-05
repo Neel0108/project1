@@ -26,9 +26,10 @@ pipeline {
             steps {
                 script {
                     withCredentials([string(credentialsId: 'neelkakadia', variable: 'dockerhubpwd')]) {
-    // some block   
-                        sh 'docker login -u neelkakadia -p $(dockerhubpwd)'
+    // some block
                     }
+                     
+                    sh 'docker login -u neelkakadia -p "$(dockerhubpwd)"'
                 }
             }
         }
