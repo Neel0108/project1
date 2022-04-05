@@ -29,7 +29,9 @@ pipeline {
             sh 'echo "Tests passed"'
           }
         }
-      
+    }   
+}
+
 //       stage('Push Docker Image') {
 //            steps {
 //                script {
@@ -41,5 +43,4 @@ pipeline {
 //                }
   //          }
      //   } 
-    }    
-}
+    }
