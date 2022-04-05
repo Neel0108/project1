@@ -24,14 +24,16 @@ pipeline {
       
         stage('Build image') {
             steps {
-                app = docker.build("Neel0108/project1/test")
+                    app = docker.build("Neel0108/project1/test")
             }
         }
         
         stage('Test image') {
             steps {
               app.inside {
-                sh 'echo "Tests passed"'
+                  script {
+                    sh 'echo "Tests passed" '
+                  }
               }
             }
         }
