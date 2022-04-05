@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    
+    environment {
+		DOCKERHUB_CREDENTIALS=credentials('neelkakadia')
+	}
 
     stages {
         
@@ -25,11 +29,7 @@ pipeline {
         stage('Docker Login') {
             steps {
                 script {
-                    withCredentials([string(credentialsId: 'neelkakadia', variable: 'dockerhubpwd')]) {
-    // some block
-                    }
-                     
-                    sh 'docker login -u neelkakadia -p "$(dockerhubpwd)"'
+                    sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
                 }
             }
         }
