@@ -12,6 +12,7 @@ pipeline {
             steps {
                 script {
                     sh 'git clone https://github.com/Neel0108/project1.git'
+                }
             }
         }
       
