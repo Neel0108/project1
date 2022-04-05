@@ -18,7 +18,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 script {
-                    sh 'sudo docker build -t neelkakadia_image .'
+                    sh 'docker build -t neelkakadia_image .'
                 }
             }
         }
