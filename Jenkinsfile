@@ -9,25 +9,31 @@ pipeline {
             }
         }
         stage('Clone repository') {
-          checkout scm
+            steps {
+                checkout scm
+            }
         }
       
-        stage('Build Docker Image') {
+   /*     stage('Build Docker Image') {
             steps {
                 script {
                   sh 'docker build -t neelkakadia/neelkakadia_my_app_1.0 .'
                 }
             }
-        }
+        }       */
       
         stage('Build image') {
-          app = docker.build("Neel0108/project1")
+            steps {
+                app = docker.build("Neel0108/project1/test")
+            }
         }
         
         stage('Test image') {
-          app.inside {
-            sh 'echo "Tests passed"'
-          }
+            steps {
+              app.inside {
+                sh 'echo "Tests passed"'
+              }
+            }
         }
     }   
 }
