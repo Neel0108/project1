@@ -41,6 +41,13 @@ pipeline {
                 }
             }
         }
+	stage('Remove Image'){
+	    steps {
+		script {
+		    sh'docker rmi -f neelkakadia/neelkakadia_image'	        
+		}
+	    }
+	}
     }
 }      
    /*     stage('Build Docker Image') {
