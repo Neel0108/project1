@@ -12,13 +12,11 @@ pipeline {
                 echo 'The Code will be now be built into an artifact'
             }
         }
-       /* stage('Clone repository') {
+        stage('Clone repository') {
             steps {
-                script {
-                    sh 'git clone https://github.com/Neel0108/project1.git'
-                }
-            }
-        } */
+                git  'https://github.com/Neel0108/project1.git'     
+	    }
+        } 
         stage('Build Image') {
             steps {
                 script {
